@@ -1,6 +1,21 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "webapp",
   "compatibility_date": "2025-10-02",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": "./dist"
+  "pages_build_output_dir": "./dist",
+
+  // D1 Database для заявок
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "webapp-production",
+      "database_id": "your-database-id-here"
+    }
+  ],
+
+  // Переменные окружения (для локальной разработки используй .dev.vars)
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
 }
